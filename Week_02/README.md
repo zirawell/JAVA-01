@@ -4,12 +4,12 @@
 ## SerialGC
 ### 1. 启动java程序
 `java -Xms1g -Xmx1g -XX:-UseAdaptiveSizePolicy -XX:+UseSerialGC -jar gateway-server-0.0.1-SNAPSHOT.jar`
-![20210121-java01](/Resources/20210121-java01.png)
+![20210121-java01](https://github.com/zirawell/JAVA-01/blob/main/Week_02/Resources/20210121-java01.png)
 
 ### 2. 使用 `jps` 查看java进程：
-![20210121-jps01](/Resources/20210121-jps01.png)
+![20210121-jps01](https://github.com/zirawell/JAVA-01/blob/main/Week_02/Resources/20210121-jps01.png)
 ### 3. 使用`jstat -gc 68265 250 4`,采样时间间隔为250ms，采样数为4：
-![20210121-jstat01](/Resources/20210121-jstat01.png)
+![20210121-jstat01](https://github.com/zirawell/JAVA-01/blob/main/Week_02/Resources/20210121-jstat01.png)
 
 > S0C、S1C、S0U、S1U：Survivor 0/1区容量（Capacity）和使用量（Used）
 > EC、EU：Eden区新生代容量和使用量
@@ -21,7 +21,7 @@
 > GCT：GC总耗时
 
 ### 4. 使用`jstat -gcutil 68265`
-![20210121-jstat02](/Resources/20210121-jstat02.png)
+![20210121-jstat02](https://github.com/zirawell/JAVA-01/blob/main/Week_02/Resources/20210121-jstat02.png)
 > S0：Survivor 0区使用率
 > S1：Survivor 1区使用率
 > E：Eden区新生代使用率
@@ -34,29 +34,29 @@
 > FGCT：Full GC耗时
 > GCT：GC总耗时
 ### 5. 使用`jmc`,并通过`wrk -d60s http://localhost:8088`进行压测
-![20210121-wrk01](/Resources/20210121-wrk01.png)
+![20210121-wrk01](https://github.com/zirawell/JAVA-01/blob/main/Week_02/Resources/20210121-wrk01.png)
 
 
-![20210121-jmc02](/Resources/20210121-jmc01.png)
+![20210121-jmc02](https://github.com/zirawell/JAVA-01/blob/main/Week_02/Resources/20210121-jmc01.png)
 ###6. 使用`jmap -heap pid`时候报错异常，会使得gate-server终止，未能成功。??
-![20210121-jmap01](/Resources/20210121-jmap01.png)
+![20210121-jmap01](https://github.com/zirawell/JAVA-01/blob/main/Week_02/Resources/20210121-jmap01.png)
 
 ## ParallelGC
 `java -Xmx1g -Xms1g -XX:-UseAdaptiveSizePolicy -XX:+UseParallelGC -jar gateway-server-0.0.1-SNAPSHOT.jar`
-![20210121-wrk02](/Resources/20210121-wrk02.png)
-![20210121-jmc02](/Resources/20210121-jmc02.png)
+![20210121-wrk02](https://github.com/zirawell/JAVA-01/blob/main/Week_02/Resources/20210121-wrk02.png)
+![20210121-jmc02](https://github.com/zirawell/JAVA-01/blob/main/Week_02/Resources/20210121-jmc02.png)
 
 ## ConcMarkSweepGC
 `java -Xmx1g -Xms1g -XX:-UseAdaptiveSizePolicy -XX:+UseConcMarkSweepGC -jar gateway-server-0.0.1-SNAPSHOT.jar`
-![20210121-wrk03](/Resources/20210121-wrk03.png)
-![20210121-jmc03](/Resources/20210121-jmc03.png)
+![20210121-wrk03](https://github.com/zirawell/JAVA-01/blob/main/Week_02/Resources/20210121-wrk03.png)
+![20210121-jmc03](https://github.com/zirawell/JAVA-01/blob/main/Week_02/Resources/20210121-jmc03.png)
 
 
 
 ## G1GC
 `java -Xmx1g -Xms1g -XX:-UseAdaptiveSizePolicy -XX:+UseG1GC -XX:MaxGCPauseMillis=50 -jar gateway-server-0.0.1-SNAPSHOT.jar`
-![20210121-wrk04](/Resources/20210121-wrk04.png)
-![20210121-jmc04](/Resources/20210121-jmc04.png)
+![20210121-wrk04](https://github.com/zirawell/JAVA-01/blob/main/Week_02/Resources/20210121-wrk04.png)
+![20210121-jmc04](https://github.com/zirawell/JAVA-01/blob/main/Week_02/Resources/20210121-jmc04.png)
 
 
 # JVM笔记与总结
@@ -74,10 +74,10 @@ jvisualvm
 VisualGC-->idea
 jmc
 ### 各个GC对比
-![GCCompare](/Resources/GCCompare.png)
+![GCCompare](https://github.com/zirawell/JAVA-01/blob/main/Week_02/Resources/GCCompare.png)
 
 ### 常用的GC组合
- ![GCRelationship](/Resources/GCRelationship.png)
+ ![GCRelationship](https://github.com/zirawell/JAVA-01/blob/main/Week_02/Resources/GCRelationship.png)
 
  常用的组合为:
 (1)Serial+Serial Old 实现单线程的低延迟 垃圾回收机制;
